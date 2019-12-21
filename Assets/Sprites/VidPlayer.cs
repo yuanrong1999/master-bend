@@ -9,6 +9,17 @@ public class VidPlayer : MonoBehaviour
     {
        a = GetComponent<VideoPlayer>();
         a.playOnAwake = false;
+
+    }
+
+    private void OnGUI()
+    {
+        if (GUILayout.Button("Skip"))
+        {
+            a.Play();
+        }
+
+
         
     }
 
