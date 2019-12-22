@@ -10,7 +10,7 @@ public class VidPlayer : MonoBehaviour
     string ButtonText = "Skip";
     bool SkipORnot = false; //Skip不作用
     public List<VideoClip> videos = new List<VideoClip>();
-    public Transform skip;
+    //public Transform skip;
     //System.Collections.Generic.IList<VideoClip> videos = new IList<VideoClip>()
 
 
@@ -19,11 +19,6 @@ public class VidPlayer : MonoBehaviour
         a = GetComponent<VideoPlayer>();
         //a.clip;
         a.loopPointReached += EndReached;
-        if (Input.GetKey("mouse0"))
-        {
-            Application.Quit();
-        }
-
 
         //結束程式
         if (Input.GetKey("escape"))
@@ -70,8 +65,6 @@ public class VidPlayer : MonoBehaviour
             a.clip = videos[3];//播放陣列3影片
             a.Play();
         }
-
-
     }
     #region 隱藏的code 
     /*private void OnGUI()
