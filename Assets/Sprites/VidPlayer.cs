@@ -28,6 +28,7 @@ public class VidPlayer : MonoBehaviour
 
     }
 
+    //偵測影片播完code
     void EndReached(UnityEngine.Video.VideoPlayer a)
     {
 
