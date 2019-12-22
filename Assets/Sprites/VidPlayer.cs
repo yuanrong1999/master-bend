@@ -35,26 +35,27 @@ public class VidPlayer : MonoBehaviour
 
     void EndReached(UnityEngine.Video.VideoPlayer a)
     {
-        
+
         a.Stop();//停止目前影片
-        gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>("pixiv頭貼");
-        Input.GetKeyDown("mouse0");
-        SceneManager.LoadScene(2);
-        /**a.clip = videos[1];//播放陣列1影片
+                 /**if( gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>("pixiv頭貼"))
+                  {
+                      Input.GetKeyDown("mouse0");
+                      SceneManager.LoadScene(2);
+                  }
+                  **/
+
+        a.clip = videos[1];//播放陣列1影片
         a.Play();
         a.Stop();//停止目前影片
-
-        
-
         a.clip = videos[2];//播放陣列2影片
         a.Play();
         a.Stop();//停止目前影片
         a.clip = videos[3];//播放陣列3影片
         a.Play();
         a.Stop();
-        Application.Quit();**/
+        Application.Quit();
     }
-    /*private void OnGUI()
+    private void OnGUI()
     {
         if (GUILayout.Button("Skip"))
         {
@@ -69,19 +70,19 @@ public class VidPlayer : MonoBehaviour
             a.clip = videos[3];//播放陣列3影片
             a.Play();
         }
-        */
 
 
     }
+}
 
 
 
-internal class waitforseconds
+/*internal class waitforseconds
 {
     public waitforseconds()
     {
     }
-}
+}*/
 
 /*private void OnGUI()
 {
