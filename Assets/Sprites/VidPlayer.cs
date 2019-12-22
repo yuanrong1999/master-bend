@@ -51,6 +51,8 @@ public class VidPlayer : MonoBehaviour
         a.Stop();
         Application.Quit();
     }
+
+    //GUI按鈕 跳過按鈕
     private void OnGUI()
     {
         if (GUILayout.Button("Skip"))
