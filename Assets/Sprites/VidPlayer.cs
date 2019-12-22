@@ -73,34 +73,40 @@ public class VidPlayer : MonoBehaviour
 
 
     }
-}
-
-
-
-/*internal class waitforseconds
+    #region 隱藏的code 
+    /*private void OnGUI()
+    {
+        if (Input.GetKeyDown("Mouse0"))
+        {
+            a.Stop();//停止目前影片
+            a.clip = videos[2];//播放陣列2影片
+            a.Play();
+        }
+    }*/
+    /*internal class waitforseconds
 {
     public waitforseconds()
     {
     }
 }*/
-
-/*private void OnGUI()
+    /**if (GUI.Button(new Rect(300,0,0,0),ButtonText))
 {
-    if (Input.GetKeyDown("Mouse0"))
-    {
-        a.Stop();//停止目前影片
-        a.clip = videos[2];//播放陣列2影片
-        a.Play();
-    }
-}*/
-
-/**if (GUI.Button(new Rect(300,0,0,0),ButtonText))
-{
-    if(SkipORnot==false)
-    {
-    SkipORnot = true;
-    }
+        if(SkipORnot==false)
+        {
+        SkipORnot = true;
+        }
 }**/
+    #endregion
+
+}
+
+
+
+
+
+
+
+
 
 
 
