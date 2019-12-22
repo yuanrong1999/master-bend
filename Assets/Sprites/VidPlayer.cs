@@ -2,6 +2,7 @@
 using UnityEngine.Video;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class VidPlayer : MonoBehaviour
 {
@@ -18,7 +19,11 @@ public class VidPlayer : MonoBehaviour
         a = GetComponent<VideoPlayer>();
         //a.clip;
         a.loopPointReached += EndReached;
-        gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>("pixiv頭貼");
+        if (Input.GetKey("mouse0"))
+        {
+            Application.Quit();
+        }
+
 
         //結束程式
         if (Input.GetKey("escape"))
@@ -30,13 +35,16 @@ public class VidPlayer : MonoBehaviour
 
     void EndReached(UnityEngine.Video.VideoPlayer a)
     {
+        
         a.Stop();//停止目前影片
-        a.clip = videos[1];//播放陣列1影片
+        gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>("pixiv頭貼");
+        Input.GetKeyDown("mouse0");
+        SceneManager.LoadScene(2);
+        /**a.clip = videos[1];//播放陣列1影片
         a.Play();
         a.Stop();//停止目前影片
 
         
-        Input.GetKeyDown("mouse0");
 
         a.clip = videos[2];//播放陣列2影片
         a.Play();
@@ -44,7 +52,7 @@ public class VidPlayer : MonoBehaviour
         a.clip = videos[3];//播放陣列3影片
         a.Play();
         a.Stop();
-        Application.Quit();
+        Application.Quit();**/
     }
     /*private void OnGUI()
     {
