@@ -19,37 +19,29 @@ public class VidPlayer : MonoBehaviour
         a = GetComponent<VideoPlayer>();
         //a.clip;
         a.loopPointReached += EndReached;
-
-        //結束程式
-        if (Input.GetKey("escape"))
+        if(Input.GetKeyDown("Escape"))
         {
             Application.Quit();
         }
-
+        
     }
 
     //偵測影片播完code
     void EndReached(UnityEngine.Video.VideoPlayer a)
     {
-
         a.Stop();//停止目前影片
-                 /**if( gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>("pixiv頭貼"))
-                  {
-                      Input.GetKeyDown("mouse0");
-                      SceneManager.LoadScene(2);
-                  }
-                  **/
-
         a.clip = videos[1];//播放陣列1影片
         a.Play();
+
         a.Stop();//停止目前影片
         a.clip = videos[2];//播放陣列2影片
         a.Play();
+
         a.Stop();//停止目前影片
         a.clip = videos[3];//播放陣列3影片
         a.Play();
+
         a.Stop();
-        Application.Quit();
     }
 
     //GUI按鈕 跳過按鈕
@@ -70,6 +62,12 @@ public class VidPlayer : MonoBehaviour
         }
     }
     #region 隱藏的code 
+    /**if( gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>("pixiv頭貼"))
+                  {
+                      Input.GetKeyDown("mouse0");
+                      SceneManager.LoadScene(2);
+                  }
+                  **/
     /*private void OnGUI()
     {
         if (Input.GetKeyDown("Mouse0"))
